@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
+from djangocrud import views
 
 urlpatterns = [
+    path('', views.homepage, name='homepage'),
     path('create_user/', views.create_user, name='create_user'),
-    path('user_list/', views.user_list, name='user_list'),
+    path('list_user/', views.list_user, name='list_user'),
 ]

@@ -4,8 +4,11 @@ from .forms import UserForm
 
 # Create your views here.
 
+def homepage(request):
+    return render(request, 'homepage.html')
+
 def create_user(request):
-    if request.method == 'POST'
+    if request.method == 'POST':
         form = UserForm(request.POST)
         if form.is_valid():
             form.save()
@@ -14,6 +17,7 @@ def create_user(request):
         form = UserForm()
     return render(request, 'create_user.html', {'form': form})
 
-def user_list(request):
+
+def list_user(request):
     users = Akun.objects.all()
     return render(request, 'list_user.html', {'users': users})

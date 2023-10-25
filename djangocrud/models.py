@@ -4,7 +4,7 @@ import hashlib
 # Create your models here.
 
 class Akun(models.Model):
-    id = models.IntegerField(primary_key=True, autoincrement=True,default=1)
+    id = models.AutoField(primary_key=True, default=1)
     username = models.CharField(max_length=10)
     nama = models.CharField(max_length=50)
     password = models.CharField(max_length=64)
